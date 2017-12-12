@@ -14,11 +14,11 @@ public class BuildProgram
         }
         else if (dayx == 2)
         {
-            //workout = new DayTwo(weekx);
+            workout = new DayTwo(weekx);
         }
         else if (dayx == 3)
         {
-            //workout = new DayThree(weekx);
+            workout = new DayThree(weekx);
         }
         else
         {

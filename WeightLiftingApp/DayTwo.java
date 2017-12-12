@@ -120,19 +120,19 @@ public class DayTwo extends Workout
         String s = "";
         if (week%4==1)
         {
-            s = "5,5,5,5,5+";
+            s = "3,3,3,3,3+";
         }
         else if (week%4==2)
         {
-            s = "5,5,5,3,3+";
+            s = "3,3,3,2,2+";
         }
         else if (week%4==3)
         {
-            s = "5,5,5,3,1+";
+            s = "3,3,3,2,1+";
         }
         else if (week%4==0)
         {
-            s = "5,5,5";
+            s = "3,3,3";
         }
         return s;
     }
