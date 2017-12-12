@@ -43,8 +43,8 @@ public class DayThree extends Workout
         screen.setDefaultCloseOperation(screen.EXIT_ON_CLOSE);
         screen.setLayout(new GridLayout(9,2,10,10));
         
-        titleDay = new JLabel("Day One Workout", SwingConstants.CENTER);
-        titleWeek = new JLabel("Week One Workout", SwingConstants.CENTER);
+        titleDay = new JLabel("Day Three Workout", SwingConstants.CENTER);
+        titleWeek = new JLabel("Week Three Workout", SwingConstants.CENTER);
         lowerBodyLabel = new JLabel("<html>Deadlift<br>"+ 
                                        primaryLowerBodyLabel() +"</html>",
                                        SwingConstants.CENTER);
