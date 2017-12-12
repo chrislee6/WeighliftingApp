@@ -8,55 +8,45 @@ import java.util.Scanner;
 
 public class Tester
 {
-    public String q;
+    boolean b;
     private JFrame screen;
-    private JLabel jl;
-    private JButton jb;
-    private JTextField jt;
+    private JButton button;
     
     
-    public Tester() {
-        program();
+    public Tester() 
+    {
+        for (int i=0;i<5;i++)
+        {
+            if (i==0)
+            {
+                b=false;
+            }
+            do
+            {
+                program();
+            }while(!b);
+            b=false;
+        }
     }
 
-    public void systemCloser()
+    public static void main(String[] args) 
     {
-        Scanner in = new Scanner(System.in);
-        
-        System.out.println("Do you want to close this window?");
-        q = in.next();
-        if (q.equals("yes"))
-        {
-            System.exit(10);
-            //this does not close the program, just puts in behind another
-            //screen
-        }
-        else
-        {
-            System.out.println("Window is open");
-        }
-    }
-     
-    public static void main(String[] args) {
         new Tester();
     }
     
-    public void program() {
-        screen = new JFrame("Window");
+    public void program() 
+    {
+        screen = new JFrame("WeightLiftingApp");
         
         screen.setSize(500,500);
         screen.setDefaultCloseOperation(screen.EXIT_ON_CLOSE);
-        screen.setLayout(new FlowLayout());
+        screen.setLayout(new GridLayout(4,1,10,10));
         
-        jl = new JLabel("Please enter a number:");
-        jb = new JButton("Enter");
-        jt = new JTextField(15);
+        button = new JButton("press");
         
-        jb.addActionListener(new MyButtonListener());
+        button.addActionListener(new MyButtonListener());
         
-        screen.add(jl);
-        screen.add(jt); 
-        screen.add(jb);
+        screen.add(button);
         
         screen.setVisible(true);
     }
@@ -66,6 +56,7 @@ public class Tester
         public void actionPerformed(ActionEvent e)
         {
             System.out.println("hello");
+            b=true;
         }
     }
 

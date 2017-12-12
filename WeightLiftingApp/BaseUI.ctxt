@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=HomeUI
+comment0.target=BaseUI
 comment1.params=person
-comment1.target=HomeUI(Person)
+comment1.target=BaseUI(Person)
 comment2.params=
 comment2.target=void\ display()
 comment3.params=

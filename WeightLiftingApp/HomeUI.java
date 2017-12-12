@@ -2,18 +2,26 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class HomeUI
+public class HomeUI extends BaseUI
 {
     private JFrame screen;
     private JLabel title;
     private JButton startWorkout;
     private JButton options;
     private JButton logOut;
-    Clicked click = new Clicked();
     Person p = new Person();
+    Button b = new Button();
+    
+    String goToUI="";
     
     
-    public HomeUI()
+    
+    public HomeUI(Person person)
+    {
+        super(person);
+    }
+    
+    public void display() 
     {
         screen = new JFrame("WeightLiftingApp");
         
@@ -26,9 +34,10 @@ public class HomeUI
         options = new JButton("Settings");
         logOut = new JButton("Log Out");
         
-        startWorkout.addActionListener(new startButton());
-        options.addActionListener(new optionButton());
-        logOut.addActionListener(new logOutButton());
+        
+        startWorkout.addActionListener(b);
+        options.addActionListener(b);
+        logOut.addActionListener(b);
         
         screen.add(title);
         screen.add(startWorkout);
@@ -37,41 +46,37 @@ public class HomeUI
         
         screen.setVisible(true);
     }
-    
-    public void display() 
-    {
-        
-    }
-    
-    public static void main(String[] args) 
-    {
-        new HomeUI();
-    }
-    
-    private class startButton implements ActionListener
+
+    private class Button implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
         {
-            new StartWorkoutUI();
-            screen.setVisible(false);
+            if (e.getSource()==startWorkout)
+            {
+                goToUI="start";
+                screen.setVisible(false);
+            }
+            if (e.getSource()==options)
+            {
+                goToUI="settings";
+                screen.setVisible(false);
+            }
+            if (e.getSource()==logOut)
+            {
+                screen.dispose();
+                System.exit(0);
+            }
         }
     }
-    
-    private class optionButton implements ActionListener
+
+    public String goTo()
     {
-        public void actionPerformed(ActionEvent e)
-        {
-            new SettingsUI();
-            screen.setVisible(false);
-        }
+        return goToUI;
     }
     
-    private class logOutButton implements ActionListener
+    public void reset()
     {
-        public void actionPerformed(ActionEvent e)
-        {
-            System.out.println(p.getMaxFS());
-        }
+        goToUI="";
     }
-    
+
 }

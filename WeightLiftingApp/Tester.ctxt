@@ -2,10 +2,8 @@
 comment0.target=Tester
 comment1.params=
 comment1.target=Tester()
-comment2.params=
-comment2.target=void\ systemCloser()
-comment3.params=args
-comment3.target=void\ main(java.lang.String[])
-comment4.params=
-comment4.target=void\ program()
-numComments=5
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+comment3.params=
+comment3.target=void\ program()
+numComments=4
