@@ -19,6 +19,7 @@ public class StringMethods
         try
         {
             num = Integer.valueOf(string);
+            worked = true;
         }
         catch (Exception e)
         {

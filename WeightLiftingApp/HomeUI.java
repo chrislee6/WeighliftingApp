@@ -78,5 +78,9 @@ public class HomeUI extends BaseUI
     {
         goToUI="";
     }
-
+    
+    public void setGoTo(String string)
+    {
+        goToUI = string;
+    }
 }

@@ -15,18 +15,7 @@ public class Tester
     
     public Tester() 
     {
-        for (int i=0;i<5;i++)
-        {
-            if (i==0)
-            {
-                b=false;
-            }
-            do
-            {
-                program();
-            }while(!b);
-            b=false;
-        }
+        program();
     }
 
     public static void main(String[] args) 

@@ -22,9 +22,11 @@ public class DayTwo extends Workout
     private JLabel core1Lift;
     private JLabel core2Label;
     private JLabel core2Lift;
-    private JButton finish;
+    private JButton home;
+    private JButton logOut;
     
-    private Border borderLB1;
+    private Border border;
+    private String goToUI;
     
     
     Button b = new Button();
@@ -41,7 +43,7 @@ public class DayTwo extends Workout
         
         screen.setSize(500,500);
         screen.setDefaultCloseOperation(screen.EXIT_ON_CLOSE);
-        screen.setLayout(new GridLayout(9,2,10,10));
+        screen.setLayout(new GridLayout(9,2,0,0));
         
         titleDay = new JLabel("Day Two Workout", SwingConstants.CENTER);
         titleWeek = new JLabel("Week Two Workout", SwingConstants.CENTER);
@@ -63,9 +65,29 @@ public class DayTwo extends Workout
         core1Lift = new JLabel("2 x 8 ea",SwingConstants.CENTER);
         core2Label = new JLabel("Bird Dog Plank", SwingConstants.CENTER);
         core2Lift = new JLabel("2 x 10ea", SwingConstants.CENTER);
-        finish = new JButton("End Workout");
+        home = new JButton("Home");
+        logOut = new JButton("Log Out");
         
-        finish.addActionListener(b);
+        home.addActionListener(b);
+        logOut.addActionListener(b);
+        
+        border = BorderFactory.createLineBorder(Color.black,1);
+        titleDay.setBorder(border);
+        titleWeek.setBorder(border);
+        lowerBodyLabel.setBorder(border);
+        lowerBodyLift.setBorder(border);
+        upperBody1Label.setBorder(border);
+        upperBody1Lift.setBorder(border);
+        subset1Label.setBorder(border);
+        subset1Lift.setBorder(border);
+        upperBody2Label.setBorder(border);
+        upperBody2Lift.setBorder(border);
+        subset2Label.setBorder(border);
+        subset2Lift.setBorder(border);
+        core1Label.setBorder(border);
+        core1Lift.setBorder(border);
+        core2Label.setBorder(border);
+        core2Lift.setBorder(border);
         
         screen.add(titleDay);
         screen.add(titleWeek);
@@ -83,7 +105,8 @@ public class DayTwo extends Workout
         screen.add(core1Lift);
         screen.add(core2Label);
         screen.add(core2Lift);
-        screen.add(finish);
+        screen.add(home);
+        screen.add(logOut);
         
         screen.setVisible(true);
     }
@@ -93,9 +116,15 @@ public class DayTwo extends Workout
     {
         public void actionPerformed(ActionEvent e)
         {
-            if (e.getSource()==finish)
+            if (e.getSource()==home)
             {
-                System.out.println("works");
+                goToUI="home";
+                screen.setVisible(false);
+            }
+            if (e.getSource()==logOut)
+            {
+                screen.dispose();
+                System.exit(0);
             }
         }
     }
@@ -157,5 +186,15 @@ public class DayTwo extends Workout
             s = "50,60,70";
         }
         return s;
+    }
+    
+    public String goTo()
+    {
+        return goToUI;
+    }
+    
+    public void reset()
+    {
+        goToUI="";
     }
 }

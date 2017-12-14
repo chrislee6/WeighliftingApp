@@ -18,7 +18,8 @@ public class StartWorkoutUI extends BaseUI
     private boolean weekIsNum;
     StringMethods sm = new StringMethods();
     Button b = new Button();
-    
+    Workout workout = null;
+
     String goToUI="";
 
     public StartWorkoutUI(Person person)
@@ -59,23 +60,30 @@ public class StartWorkoutUI extends BaseUI
         {
             if (e.getSource()==start)
             {
-                day=0;
-                week=0;
                 dayIsNum=sm.isStringANum(dayTF.getText());
                 weekIsNum=sm.isStringANum(weekTF.getText());
-
                 if (dayIsNum && weekIsNum)
                 {
                     day = Integer.valueOf(dayTF.getText());
                     week = Integer.valueOf(weekTF.getText());
+                    if (day>0 && day<4)
+                    {
+                        createWorkout(day,week);
+                        screen.setVisible(false);
+                    }
+                    else if (day==0)
+                    {
+                        error.setText("Day 0 is not in the program");
+                    }
+                    else 
+                    {
+                        error.setText("Your have finished your workouts for the week");
+                    }
                 }
                 else
                 {
-                    error.setText("Please enter a number for day and week");
+                    error.setText("Please enter a different day and week");
                 }
-                BuildProgram lift = new BuildProgram();
-                lift.createWorkout(day,week);
-                screen.setVisible(false);
             }
         }
     }
@@ -84,10 +92,36 @@ public class StartWorkoutUI extends BaseUI
     {
         return goToUI;
     }
-    
+
     public void reset()
     {
         goToUI="";
+    }
+
+    public void setGoTo(String string)
+    {
+        goToUI = string;
+    }
+
+    public Workout createWorkout(int dayx, int weekx)
+    {     
+        if (dayx == 1)
+        {
+            workout = new DayOne(weekx);
+        }
+        else if (dayx == 2)
+        {
+            workout = new DayTwo(weekx);
+        }
+        else if (dayx == 3)
+        {
+            workout = new DayThree(weekx);
+        }
+        while (workout.goTo().equals(""))
+        {
+            workout.display();
+        }
+        return workout;
     }
 
 }

@@ -10,6 +10,7 @@ public class TestRunner
     HomeUI home = new HomeUI(person);
     StartWorkoutUI start = new StartWorkoutUI(person);
     SettingsUI settings = new SettingsUI(person);
+     
 
     boolean update;
     boolean firstOpen=true;
@@ -49,7 +50,7 @@ public class TestRunner
         }
         else if (goToUI.equals("settings"))
         {
-            base = settings;
+            base=settings;
         }
         base.display();
         base.reset();
@@ -75,4 +76,5 @@ public class TestRunner
     }
 
     
+
 }

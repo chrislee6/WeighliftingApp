@@ -6,6 +6,7 @@ import java.lang.Thread;
 public class RunProgram
 {
     BaseUI base = null;
+    
     Person person = new Person();
     HomeUI home = new HomeUI(person);
     StartWorkoutUI start = new StartWorkoutUI(person);

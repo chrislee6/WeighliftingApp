@@ -9,4 +9,8 @@ public abstract class Workout
     }
     
     abstract void display();
+    
+    public abstract String goTo();
+    
+    public abstract void reset();
 }

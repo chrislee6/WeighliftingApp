@@ -117,4 +117,9 @@ public class SettingsUI extends BaseUI
     {
         goToUI="";
     }
+    
+    public void setGoTo(String string)
+    {
+        goToUI = string;
+    }
 }

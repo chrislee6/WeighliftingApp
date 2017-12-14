@@ -22,4 +22,6 @@ public abstract class BaseUI
     public abstract String goTo();
     
     public abstract void reset();
+    
+    public abstract void setGoTo(String string);
 }

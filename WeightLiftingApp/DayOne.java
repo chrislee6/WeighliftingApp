@@ -23,9 +23,11 @@ public class DayOne extends Workout
     private JLabel core1Lift;
     private JLabel core2Label;
     private JLabel core2Lift;
-    private JButton finish;
+    private JButton home;
+    private JButton logOut;
     
-    private Border borderLB1;
+    private Border border;
+    String goToUI;
     
     
     Button b = new Button();
@@ -38,29 +40,11 @@ public class DayOne extends Workout
 
     public void display()
     {
-<<<<<<< HEAD
-        int maxFS;
-        Scanner in = new Scanner(System.in);
-        PercentageCalculator percentage = new PercentageCalculator();
-        
-        System.out.println("Enter your max front squat weight: ");
-        maxFS = in.nextInt();
-        System.out.println("Here is your workout.");
-        lowerBody.primaryLowerBody(maxFS,week);
-        U1.upper1(week);
-        S1.subset1();
-        U2.upper2();
-        S2.subset2();
-        System.out.println("4A. DEADBUGS: 2x10ea");
-        System.out.println("4B. BAND ANTIROTATION: 2x10ea");
-                  
-=======
->>>>>>> rewrite
         screen = new JFrame();
         
         screen.setSize(500,500);
         screen.setDefaultCloseOperation(screen.EXIT_ON_CLOSE);
-        screen.setLayout(new GridLayout(9,2,10,10));
+        screen.setLayout(new GridLayout(9,2,0,0));
         
         titleDay = new JLabel("Day One Workout", SwingConstants.CENTER);
         titleWeek = new JLabel("Week One Workout", SwingConstants.CENTER);
@@ -81,10 +65,30 @@ public class DayOne extends Workout
         core1Label = new JLabel("Deadbugs", SwingConstants.CENTER);
         core1Lift = new JLabel("2 x 10ea",SwingConstants.CENTER);
         core2Label = new JLabel("Anti-Band Rotation", SwingConstants.CENTER);
-        core2Lift = new JLabel("2 x 10ea", SwingConstants.CENTER);
-        finish = new JButton("End Workout");
+        core2Lift = new JLabel("2 x 10ea", SwingConstants.CENTER); 
+        home = new JButton("Home");
+        logOut = new JButton("Log Out");
         
-        finish.addActionListener(b);
+        home.addActionListener(b);
+        logOut.addActionListener(b);
+        
+        border = BorderFactory.createLineBorder(Color.black,1);
+        titleDay.setBorder(border);
+        titleWeek.setBorder(border);
+        lowerBodyLabel.setBorder(border);
+        lowerBodyLift.setBorder(border);
+        upperBody1Label.setBorder(border);
+        upperBody1Lift.setBorder(border);
+        subset1Label.setBorder(border);
+        subset1Lift.setBorder(border);
+        upperBody2Label.setBorder(border);
+        upperBody2Lift.setBorder(border);
+        subset2Label.setBorder(border);
+        subset2Lift.setBorder(border);
+        core1Label.setBorder(border);
+        core1Lift.setBorder(border);
+        core2Label.setBorder(border);
+        core2Lift.setBorder(border);
         
         screen.add(titleDay);
         screen.add(titleWeek);
@@ -102,7 +106,8 @@ public class DayOne extends Workout
         screen.add(core1Lift);
         screen.add(core2Label);
         screen.add(core2Lift);
-        screen.add(finish);
+        screen.add(home);
+        screen.add(logOut);
         
         screen.setVisible(true);
     }
@@ -112,9 +117,19 @@ public class DayOne extends Workout
     {
         public void actionPerformed(ActionEvent e)
         {
-            if (e.getSource()==finish)
+            if (e.getSource()==home)
             {
-                System.out.println("works");
+                BaseUI base = null;
+                Person person = new Person();
+                HomeUI home = new HomeUI(person);
+                base=home;
+                base.setGoTo("home");
+                screen.setVisible(false);
+            }
+            if (e.getSource()==logOut)
+            {
+                screen.dispose();
+                System.exit(0);
             }
         }
     }
@@ -176,5 +191,15 @@ public class DayOne extends Workout
             s = "50,60,70";
         }
         return s;
+    }
+    
+    public String goTo()
+    {
+        return goToUI;
+    }
+    
+    public void reset()
+    {
+        goToUI="";
     }
 }
