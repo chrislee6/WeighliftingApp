@@ -48,23 +48,23 @@ public class DayTwoUI extends BaseUI
         
         titleDay = new JLabel("Day 2 Workout", SwingConstants.CENTER);
         titleWeek = new JLabel("Week "+ week +" Workout", SwingConstants.CENTER);
-        lowerBodyLabel = new JLabel("<html>BB Hang Clean<br>"+ 
+        lowerBodyLabel = new JLabel("<html>1A. BB Hang Clean<br>"+ 
                                        primaryLowerBodyLabel() +"</html>",
                                        SwingConstants.CENTER);
         lowerBodyLift = new JLabel("<html>"+primaryLowerBodyLift1()+"<br>"+ 
                                        primaryLowerBodyLift2()+"</html>"
                                        ,SwingConstants.CENTER);
-        upperBody1Label = new JLabel("Tempo Push Ups (5:1:1)", SwingConstants.CENTER);
+        upperBody1Label = new JLabel("2A. Tempo Push Ups (5:1:1)", SwingConstants.CENTER);
         upperBody1Lift = new JLabel("4 x 8", SwingConstants.CENTER);
-        subset1Label = new JLabel("BB RDL", SwingConstants.CENTER);
+        subset1Label = new JLabel("2B. BB RDL", SwingConstants.CENTER);
         subset1Lift = new JLabel("4 x 6",SwingConstants.CENTER);
-        upperBody2Label = new JLabel("Chest Supported Rows", SwingConstants.CENTER);
+        upperBody2Label = new JLabel("3A. Chest Supported Rows", SwingConstants.CENTER);
         upperBody2Lift = new JLabel("3 x 10", SwingConstants.CENTER);
-        subset2Label = new JLabel("DB Walking Lunge", SwingConstants.CENTER);
+        subset2Label = new JLabel("3B. DB Walking Lunge", SwingConstants.CENTER);
         subset2Lift = new JLabel("3 x 8 ea", SwingConstants.CENTER);
-        core1Label = new JLabel("Landmine Rotations", SwingConstants.CENTER);
+        core1Label = new JLabel("4A. Landmine Rotations", SwingConstants.CENTER);
         core1Lift = new JLabel("2 x 8 ea",SwingConstants.CENTER);
-        core2Label = new JLabel("Bird Dog Plank", SwingConstants.CENTER);
+        core2Label = new JLabel("4B. Bird Dog Plank", SwingConstants.CENTER);
         core2Lift = new JLabel("2 x 10ea", SwingConstants.CENTER);
         home = new JButton("Home");
         logOut = new JButton("Log Out");
@@ -119,7 +119,8 @@ public class DayTwoUI extends BaseUI
         {
             if (e.getSource()==home)
             {
-
+                goToUI="home";
+                screen.setVisible(false);
             }
             if (e.getSource()==logOut)
             {

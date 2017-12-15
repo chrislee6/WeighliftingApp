@@ -9,18 +9,18 @@ public class PercentageCalculator
 
     }
     
-    public int percent(int max, double percent, int week)
+    public int percent(int max, double percent)
     {
         double weight = 1.0*max*percent;
         int roundedW = (int)weight;
         
         if (roundedW % 5.0 == 0)
         {
-            return roundedW + 10*(week-1);
+            return roundedW;
         }
         else
         {
-            return roundTo5(roundedW) + 10*(week-1);
+            return roundTo5(roundedW);
         }
     }
     

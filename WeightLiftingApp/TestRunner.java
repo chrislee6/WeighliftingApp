@@ -14,7 +14,6 @@ public class TestRunner
      
     
     boolean update;
-    boolean firstOpen=true;
     String goToUI;
 
     public TestRunner()

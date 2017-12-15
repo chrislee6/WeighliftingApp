@@ -1,9 +1,8 @@
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class StartWorkoutUI extends BaseUI
+public class RunningWorkoutUI extends BaseUI
 {
     private JFrame screen;
     private JLabel dayL;
@@ -27,7 +26,7 @@ public class StartWorkoutUI extends BaseUI
 
     String goToUI="";
 
-    public StartWorkoutUI(Person person)
+    public RunningWorkoutUI(Person person)
     {
         super(person);
     }
@@ -44,7 +43,7 @@ public class StartWorkoutUI extends BaseUI
         weekL = new JLabel("What week are you on?",JLabel.CENTER);
         dayTF = new JTextField(10);
         weekTF = new JTextField(10);
-        start = new JButton("Start Workout");
+        start = new JButton("Start Running Workout");
         error = new JLabel();
 
         start.addActionListener(b);
@@ -73,29 +72,23 @@ public class StartWorkoutUI extends BaseUI
                     week = Integer.valueOf(weekTF.getText());
                     if (day==1)
                     {
-                        goToUI="day1";
+                        goToUI="rday1";
                         findweek=true;
                         screen.setVisible(false);
                     }
                     else if (day==2)
                     {
-                        goToUI="day2";
+                        goToUI="rday2";
                         findweek=true;
                         screen.setVisible(false);
                     }    
-                    else if (day==3)
-                    {
-                        goToUI="day3";
-                        findweek=true;
-                        screen.setVisible(false);
-                    }
                     else if (day==0)
                     {
                         error.setText("Day 0 is not in the program");
                     }
                     else 
                     {
-                        error.setText("Your have finished your workouts for the week");
+                        error.setText("Your have finished your running for the week");
                     }
                 }
                 else
@@ -125,5 +118,4 @@ public class StartWorkoutUI extends BaseUI
     {
         return findweek;
     }
-
 }

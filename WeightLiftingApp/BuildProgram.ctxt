@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=BuildProgram
-comment1.params=
-comment1.target=BuildProgram()
-comment2.params=dayx\ weekx\ fs\ hc\ dl
-comment2.target=Workout\ createWorkout(int,\ int,\ int,\ int,\ int)
-numComments=3

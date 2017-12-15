@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=RunningWorkoutUI
+comment1.params=person
+comment1.target=RunningWorkoutUI(Person)
+comment2.params=
+comment2.target=void\ display()
+comment3.params=
+comment3.target=java.lang.String\ goTo()
+comment4.params=
+comment4.target=void\ reset()
+comment5.params=
+comment5.target=int\ getWeek()
+comment6.params=
+comment6.target=boolean\ findWeek()
+numComments=7
