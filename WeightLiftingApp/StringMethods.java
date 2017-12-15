@@ -3,6 +3,7 @@ public class StringMethods
 {
     String string;
     int num;
+    double dub;
     boolean worked = true;
     boolean isALift = false;
     
@@ -19,6 +20,22 @@ public class StringMethods
         try
         {
             num = Integer.valueOf(string);
+            worked = true;
+        }
+        catch (Exception e)
+        {
+            worked = false;
+        }
+        return worked;
+    }
+    
+    public boolean isStringADouble(String string)
+    {
+        //try-catch statement
+        this.string = string;
+        try
+        {
+            dub = Double.parseDouble(string);
             worked = true;
         }
         catch (Exception e)
