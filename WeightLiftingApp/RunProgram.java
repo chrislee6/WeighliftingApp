@@ -11,7 +11,6 @@ public class RunProgram
     HomeUI home = new HomeUI(person);
     StartWorkoutUI start = new StartWorkoutUI(person);
     RunningWorkoutUI run = new RunningWorkoutUI(person);
-    SettingsUI settings = new SettingsUI(person);
     
     
     int week;

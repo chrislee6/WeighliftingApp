@@ -6,19 +6,21 @@ import java.lang.Thread;
 public class TestRunner
 {
     BaseUI base = null;
+    
     Person person = new Person();
     HomeUI home = new HomeUI(person);
     StartWorkoutUI start = new StartWorkoutUI(person);
-    SettingsUI settings = new SettingsUI(person);
-    int week;
-     
+    RunningWorkoutUI run = new RunningWorkoutUI(person);
     
+    
+    int week;
     boolean update;
+    boolean firstOpen=true;
     String goToUI;
 
     public TestRunner()
     {
-        for (int i=0;i<100;i++)
+        for (int i=0;i<1000;i++)
         {
             if (i==0)
             {
@@ -48,9 +50,9 @@ public class TestRunner
         {
             base=start;
         }
-        else if (goToUI.equals("settings"))
+        else if (goToUI.equals("run"))
         {
-            base=settings;
+            base=run;
         }
         else if (goToUI.equals("day1"))
         {
@@ -63,6 +65,14 @@ public class TestRunner
         else if (goToUI.equals("day3"))
         {
             base= new DayThreeUI(person,week);
+        }
+        else if (goToUI.equals("rday1"))
+        {
+            base= new rDayOneUI(person,week);
+        }
+        else if (goToUI.equals("rday2"))
+        {
+            base= new rDayTwoUI(person,week);
         }
         base.display();
         base.reset();
@@ -84,9 +94,9 @@ public class TestRunner
             goToUI="start";
             update=true;
         }
-        else if (base.goTo().equals("settings"))
+        else if (base.goTo().equals("run"))
         {
-            goToUI="settings";
+            goToUI="run";
             update=true;
         }
         else if (base.goTo().equals("day1"))
@@ -104,8 +114,17 @@ public class TestRunner
             goToUI="day3";
             update=true;
         }
+        else if (base.goTo().equals("rday1"))
+        {
+            goToUI="rday1";
+            update=true;
+        }
+        else if (base.goTo().equals("rday2"))
+        {
+            goToUI="rday2";
+            update=true;
+        }
     }
-
-    
-
 }
+
+
