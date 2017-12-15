@@ -18,7 +18,11 @@ public class StartWorkoutUI extends BaseUI
     private boolean weekIsNum;
     StringMethods sm = new StringMethods();
     Button b = new Button();
-    Workout workout = null;
+    
+    private int fs = person.getMaxFS();
+    private int hc = person.getMaxHC();
+    private int dl = person.getMaxDL();
+    
 
     String goToUI="";
 
@@ -60,6 +64,7 @@ public class StartWorkoutUI extends BaseUI
         {
             if (e.getSource()==start)
             {
+                BuildProgram lift = new BuildProgram();
                 dayIsNum=sm.isStringANum(dayTF.getText());
                 weekIsNum=sm.isStringANum(weekTF.getText());
                 if (dayIsNum && weekIsNum)
@@ -68,7 +73,7 @@ public class StartWorkoutUI extends BaseUI
                     week = Integer.valueOf(weekTF.getText());
                     if (day>0 && day<4)
                     {
-                        createWorkout(day,week);
+                        lift.createWorkout(day,week,fs,hc,dl);
                         screen.setVisible(false);
                     }
                     else if (day==0)
@@ -96,32 +101,6 @@ public class StartWorkoutUI extends BaseUI
     public void reset()
     {
         goToUI="";
-    }
-
-    public void setGoTo(String string)
-    {
-        goToUI = string;
-    }
-
-    public Workout createWorkout(int dayx, int weekx)
-    {     
-        if (dayx == 1)
-        {
-            workout = new DayOne(weekx);
-        }
-        else if (dayx == 2)
-        {
-            workout = new DayTwo(weekx);
-        }
-        else if (dayx == 3)
-        {
-            workout = new DayThree(weekx);
-        }
-        while (workout.goTo().equals(""))
-        {
-            workout.display();
-        }
-        return workout;
     }
 
 }

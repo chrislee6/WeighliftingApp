@@ -71,7 +71,7 @@ public class SettingsUI extends BaseUI
                 weightNum = weightTF.getText();
                 weightIsNum = sm.isStringANum(weightNum);
                 isLift = sm.isStringALift(liftType);
-
+                
                 if (weightIsNum && isLift)
                 {
                     if (liftType.toLowerCase().equals("front squat"))
@@ -118,8 +118,4 @@ public class SettingsUI extends BaseUI
         goToUI="";
     }
     
-    public void setGoTo(String string)
-    {
-        goToUI = string;
-    }
 }

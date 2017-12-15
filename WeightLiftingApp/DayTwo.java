@@ -26,15 +26,15 @@ public class DayTwo extends Workout
     private JButton logOut;
     
     private Border border;
-    private String goToUI;
+    private String goToUI = "";
     
     
     Button b = new Button();
     
     
-    public DayTwo(int week)
+    public DayTwo(int week, int fs, int hc, int dl)
     {
-        super(week);        
+        super(week,fs,hc,dl);       
     }
 
     public void display()
@@ -45,8 +45,8 @@ public class DayTwo extends Workout
         screen.setDefaultCloseOperation(screen.EXIT_ON_CLOSE);
         screen.setLayout(new GridLayout(9,2,0,0));
         
-        titleDay = new JLabel("Day Two Workout", SwingConstants.CENTER);
-        titleWeek = new JLabel("Week Two Workout", SwingConstants.CENTER);
+        titleDay = new JLabel("Day 2 Workout", SwingConstants.CENTER);
+        titleWeek = new JLabel("Week "+ week +" Workout", SwingConstants.CENTER);
         lowerBodyLabel = new JLabel("<html>BB Hang Clean<br>"+ 
                                        primaryLowerBodyLabel() +"</html>",
                                        SwingConstants.CENTER);

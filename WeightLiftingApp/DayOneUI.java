@@ -4,7 +4,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 
 
-public class DayOne extends Workout
+public class DayOneUI extends BaseUI
 {
     private JFrame screen;
     private JLabel titleDay;
@@ -28,14 +28,14 @@ public class DayOne extends Workout
     
     private Border border;
     String goToUI="";
-    
+    int week;
     
     Button b = new Button();
     
-    
-    public DayOne(int week, int fs, int hc, int dl)
+    public DayOneUI(Person person,int week)
     {
-        super(week,fs,hc,dl);        
+        super(person);
+        this.week=week;
     }
 
     public void display()
@@ -49,7 +49,6 @@ public class DayOne extends Workout
         titleDay = new JLabel("Day 1 Workout", SwingConstants.CENTER);
         titleWeek = new JLabel("Week "+ week +" Workout", SwingConstants.CENTER);
         lowerBodyLabel = new JLabel("<html>FrontSquat<br>"+
-                                       "Max: "+fs+"<br>"+
                                        primaryLowerBodyLabel() +"</html>",
                                        SwingConstants.CENTER);
         lowerBodyLift = new JLabel("<html>"+primaryLowerBodyLift1()+"<br>"+ 
@@ -189,7 +188,7 @@ public class DayOne extends Workout
         return s;
     }
     
-    public String goTo()
+     public String goTo()
     {
         return goToUI;
     }

@@ -9,7 +9,6 @@ public class HomeUI extends BaseUI
     private JButton startWorkout;
     private JButton options;
     private JButton logOut;
-    Person p = new Person();
     Button b = new Button();
     
     String goToUI="";
@@ -78,9 +77,5 @@ public class HomeUI extends BaseUI
     {
         goToUI="";
     }
-    
-    public void setGoTo(String string)
-    {
-        goToUI = string;
-    }
+
 }

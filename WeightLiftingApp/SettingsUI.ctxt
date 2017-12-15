@@ -8,6 +8,4 @@ comment3.params=
 comment3.target=java.lang.String\ goTo()
 comment4.params=
 comment4.target=void\ reset()
-comment5.params=string
-comment5.target=void\ setGoTo(java.lang.String)
-numComments=6
+numComments=5
