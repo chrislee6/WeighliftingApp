@@ -16,6 +16,7 @@ public class StartWorkoutUI extends BaseUI
     private int week;
     private boolean dayIsNum;
     private boolean weekIsNum;
+    private boolean findweek=false;
     StringMethods sm = new StringMethods();
     Button b = new Button();
     
@@ -71,9 +72,22 @@ public class StartWorkoutUI extends BaseUI
                 {
                     day = Integer.valueOf(dayTF.getText());
                     week = Integer.valueOf(weekTF.getText());
-                    if (day>0 && day<4)
+                    if (day==1)
                     {
-                        lift.createWorkout(day,week,fs,hc,dl);
+                        goToUI="day1";
+                        findweek=true;
+                        screen.setVisible(false);
+                    }
+                    else if (day==2)
+                    {
+                        goToUI="day2";
+                        findweek=true;
+                        screen.setVisible(false);
+                    }    
+                    else if (day==1)
+                    {
+                        goToUI="day3";
+                        findweek=true;
                         screen.setVisible(false);
                     }
                     else if (day==0)
@@ -101,6 +115,16 @@ public class StartWorkoutUI extends BaseUI
     public void reset()
     {
         goToUI="";
+    }
+    
+    public int getWeek()
+    {
+        return week;
+    }
+    
+    public boolean findWeek()
+    {
+        return findweek;
     }
 
 }

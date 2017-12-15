@@ -4,7 +4,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 
 
-public class DayOneUI extends BaseUI
+public class DayThreeUI extends BaseUI
 {
     private JFrame screen;
     private JLabel titleDay;
@@ -32,7 +32,7 @@ public class DayOneUI extends BaseUI
     
     Button b = new Button();
     
-    public DayOneUI(Person person,int week)
+    public DayThreeUI(Person person,int week)
     {
         super(person);
         this.week=week;
@@ -46,26 +46,26 @@ public class DayOneUI extends BaseUI
         screen.setDefaultCloseOperation(screen.EXIT_ON_CLOSE);
         screen.setLayout(new GridLayout(9,2,0,0));
         
-        titleDay = new JLabel("Day 1 Workout", SwingConstants.CENTER);
+        titleDay = new JLabel("Day 3 Workout", SwingConstants.CENTER);
         titleWeek = new JLabel("Week "+ week +" Workout", SwingConstants.CENTER);
-        lowerBodyLabel = new JLabel("<html>FrontSquat<br>"+
+        lowerBodyLabel = new JLabel("<html>Deadlift<br>"+ 
                                        primaryLowerBodyLabel() +"</html>",
                                        SwingConstants.CENTER);
         lowerBodyLift = new JLabel("<html>"+primaryLowerBodyLift1()+"<br>"+ 
                                        primaryLowerBodyLift2()+"</html>"
                                        ,SwingConstants.CENTER);
-        upperBody1Label = new JLabel("DB Chest Press", SwingConstants.CENTER);
-        upperBody1Lift = new JLabel("4 x 6", SwingConstants.CENTER);
-        subset1Label = new JLabel("SB Leg Curls", SwingConstants.CENTER);
+        upperBody1Label = new JLabel("Kneeling Landmine Press", SwingConstants.CENTER);
+        upperBody1Lift = new JLabel("4 x 6 ea", SwingConstants.CENTER);
+        subset1Label = new JLabel("GHR/Hyperextension", SwingConstants.CENTER);
         subset1Lift = new JLabel("3 x 10",SwingConstants.CENTER);
-        upperBody2Label = new JLabel("Weighted Pull-ups", SwingConstants.CENTER);
-        upperBody2Lift = new JLabel("4 x 5", SwingConstants.CENTER);
-        subset2Label = new JLabel("Chest Supported T's", SwingConstants.CENTER);
+        upperBody2Label = new JLabel("DB SA Rows", SwingConstants.CENTER);
+        upperBody2Lift = new JLabel("3 x 10", SwingConstants.CENTER);
+        subset2Label = new JLabel("DB Lateral Raises", SwingConstants.CENTER);
         subset2Lift = new JLabel("3 x 10", SwingConstants.CENTER);
-        core1Label = new JLabel("Deadbugs", SwingConstants.CENTER);
+        core1Label = new JLabel("SB Plank W/Knee Punch", SwingConstants.CENTER);
         core1Lift = new JLabel("2 x 10ea",SwingConstants.CENTER);
-        core2Label = new JLabel("Anti-Band Rotation", SwingConstants.CENTER);
-        core2Lift = new JLabel("2 x 10ea", SwingConstants.CENTER); 
+        core2Label = new JLabel("Kneeling Band/Cable Rotations", SwingConstants.CENTER);
+        core2Lift = new JLabel("2 x 10ea", SwingConstants.CENTER);
         home = new JButton("Home");
         logOut = new JButton("Log Out");
         

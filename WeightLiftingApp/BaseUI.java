@@ -23,4 +23,7 @@ public abstract class BaseUI
     
     public abstract void reset();
     
+    public abstract int getWeek();
+    
+    public abstract boolean findWeek();
 }

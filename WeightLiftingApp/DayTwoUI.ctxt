@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=DayOneUI
+comment0.target=DayTwoUI
 comment1.params=person\ week
-comment1.target=DayOneUI(Person,\ int)
+comment1.target=DayTwoUI(Person,\ int)
 comment2.params=
 comment2.target=void\ display()
 comment3.params=

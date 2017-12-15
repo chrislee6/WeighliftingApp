@@ -4,7 +4,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 
 
-public class DayOneUI extends BaseUI
+public class DayTwoUI extends BaseUI
 {
     private JFrame screen;
     private JLabel titleDay;
@@ -32,7 +32,7 @@ public class DayOneUI extends BaseUI
     
     Button b = new Button();
     
-    public DayOneUI(Person person,int week)
+    public DayTwoUI(Person person,int week)
     {
         super(person);
         this.week=week;
@@ -46,26 +46,26 @@ public class DayOneUI extends BaseUI
         screen.setDefaultCloseOperation(screen.EXIT_ON_CLOSE);
         screen.setLayout(new GridLayout(9,2,0,0));
         
-        titleDay = new JLabel("Day 1 Workout", SwingConstants.CENTER);
+        titleDay = new JLabel("Day 2 Workout", SwingConstants.CENTER);
         titleWeek = new JLabel("Week "+ week +" Workout", SwingConstants.CENTER);
-        lowerBodyLabel = new JLabel("<html>FrontSquat<br>"+
+        lowerBodyLabel = new JLabel("<html>BB Hang Clean<br>"+ 
                                        primaryLowerBodyLabel() +"</html>",
                                        SwingConstants.CENTER);
         lowerBodyLift = new JLabel("<html>"+primaryLowerBodyLift1()+"<br>"+ 
                                        primaryLowerBodyLift2()+"</html>"
                                        ,SwingConstants.CENTER);
-        upperBody1Label = new JLabel("DB Chest Press", SwingConstants.CENTER);
-        upperBody1Lift = new JLabel("4 x 6", SwingConstants.CENTER);
-        subset1Label = new JLabel("SB Leg Curls", SwingConstants.CENTER);
-        subset1Lift = new JLabel("3 x 10",SwingConstants.CENTER);
-        upperBody2Label = new JLabel("Weighted Pull-ups", SwingConstants.CENTER);
-        upperBody2Lift = new JLabel("4 x 5", SwingConstants.CENTER);
-        subset2Label = new JLabel("Chest Supported T's", SwingConstants.CENTER);
-        subset2Lift = new JLabel("3 x 10", SwingConstants.CENTER);
-        core1Label = new JLabel("Deadbugs", SwingConstants.CENTER);
-        core1Lift = new JLabel("2 x 10ea",SwingConstants.CENTER);
-        core2Label = new JLabel("Anti-Band Rotation", SwingConstants.CENTER);
-        core2Lift = new JLabel("2 x 10ea", SwingConstants.CENTER); 
+        upperBody1Label = new JLabel("Tempo Push Ups (5:1:1)", SwingConstants.CENTER);
+        upperBody1Lift = new JLabel("4 x 8", SwingConstants.CENTER);
+        subset1Label = new JLabel("BB RDL", SwingConstants.CENTER);
+        subset1Lift = new JLabel("4 x 6",SwingConstants.CENTER);
+        upperBody2Label = new JLabel("Chest Supported Rows", SwingConstants.CENTER);
+        upperBody2Lift = new JLabel("3 x 10", SwingConstants.CENTER);
+        subset2Label = new JLabel("DB Walking Lunge", SwingConstants.CENTER);
+        subset2Lift = new JLabel("3 x 8 ea", SwingConstants.CENTER);
+        core1Label = new JLabel("Landmine Rotations", SwingConstants.CENTER);
+        core1Lift = new JLabel("2 x 8 ea",SwingConstants.CENTER);
+        core2Label = new JLabel("Bird Dog Plank", SwingConstants.CENTER);
+        core2Lift = new JLabel("2 x 10ea", SwingConstants.CENTER);
         home = new JButton("Home");
         logOut = new JButton("Log Out");
         
@@ -149,19 +149,19 @@ public class DayOneUI extends BaseUI
         String s = "";
         if (week%4==1)
         {
-            s = "5,5,5,5,5+";
+            s = "3,3,3,3,3+";
         }
         else if (week%4==2)
         {
-            s = "5,5,5,3,3+";
+            s = "3,3,3,2,2+";
         }
         else if (week%4==3)
         {
-            s = "5,5,5,3,1+";
+            s = "3,3,3,2,1+";
         }
         else if (week%4==0)
         {
-            s = "5,5,5";
+            s = "3,3,3";
         }
         return s;
     }

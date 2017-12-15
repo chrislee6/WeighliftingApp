@@ -118,4 +118,13 @@ public class SettingsUI extends BaseUI
         goToUI="";
     }
     
+    public int getWeek()
+    {
+        return 0;
+    }
+    
+    public boolean findWeek()
+    {
+        return false;
+    }
 }
