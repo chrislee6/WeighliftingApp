@@ -38,9 +38,8 @@ public class rDayOneUI extends BaseUI
         titleDay = new JLabel("Day 1 Running Workout", SwingConstants.CENTER);
         titleWeek = new JLabel("Week "+ week +" Workout", SwingConstants.CENTER);
         runWorkout = new JLabel("5 x 300 yds", SwingConstants.CENTER);
-        time = new JLabel("<html>65 seconds or better. "
-                         +"Cones 50 yds apart<br>2:00 min rest</html>",
-                           SwingConstants.CENTER);
+        time = new JLabel("<html>65 seconds or better<br>"
+                         +"Cones 50 yds apart<br>2:00 min rest</html>", SwingConstants.CENTER);
         home = new JButton("Home");
         logOut = new JButton("Log Out");
         

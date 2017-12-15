@@ -7,7 +7,7 @@ public class HomeUI extends BaseUI
     private JFrame screen;
     private JLabel title;
     private JButton startWorkout;
-    private JButton options;
+    private JButton runWorkout;
     private JButton logOut;
     Button b = new Button();
     
@@ -30,17 +30,17 @@ public class HomeUI extends BaseUI
         
         title = new JLabel("Welcome! Please select an option.",JLabel.CENTER);
         startWorkout = new JButton("Start Workout");
-        options = new JButton("Settings");
+        runWorkout = new JButton("Running Workout");
         logOut = new JButton("Log Out");
         
         
         startWorkout.addActionListener(b);
-        options.addActionListener(b);
+        runWorkout.addActionListener(b);
         logOut.addActionListener(b);
         
         screen.add(title);
         screen.add(startWorkout);
-        screen.add(options);
+        screen.add(runWorkout);
         screen.add(logOut);
         
         screen.setVisible(true);
@@ -55,9 +55,9 @@ public class HomeUI extends BaseUI
                 goToUI="start";
                 screen.setVisible(false);
             }
-            if (e.getSource()==options)
+            if (e.getSource()==runWorkout)
             {
-                goToUI="settings";
+                goToUI="run";
                 screen.setVisible(false);
             }
             if (e.getSource()==logOut)

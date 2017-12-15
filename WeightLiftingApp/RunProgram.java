@@ -10,7 +10,9 @@ public class RunProgram
     Person person = new Person();
     HomeUI home = new HomeUI(person);
     StartWorkoutUI start = new StartWorkoutUI(person);
+    RunningWorkoutUI run = new RunningWorkoutUI(person);
     SettingsUI settings = new SettingsUI(person);
+    
     
     int week;
     boolean update;
@@ -49,9 +51,9 @@ public class RunProgram
         {
             base=start;
         }
-        else if (goToUI.equals("settings"))
+        else if (goToUI.equals("run"))
         {
-            base=settings;
+            base=run;
         }
         else if (goToUI.equals("day1"))
         {
@@ -93,9 +95,9 @@ public class RunProgram
             goToUI="start";
             update=true;
         }
-        else if (base.goTo().equals("settings"))
+        else if (base.goTo().equals("run"))
         {
-            goToUI="settings";
+            goToUI="run";
             update=true;
         }
         else if (base.goTo().equals("day1"))
